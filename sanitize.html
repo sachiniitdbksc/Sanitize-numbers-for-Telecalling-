@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>JavaScript Strings</h1>
+<h2>The split() Method</h2>
+
+<p>split() splits a string into an array of substrings, and returns the array:</p>
+
+<p id="demo"></p>
+
+<script>
+var name = window.prompt("Enter your data: ");
+
+
+let pattern = /\n/;
+
+let myArray = name.split(pattern);
+
+
+
+
+function cleanInput1(sting){
+	stingArray=sting.split(" ");
+    let texti="";
+    for (let k=0; k<stingArray.length; k++){
+    	texti+=stingArray[k];
+        }
+    
+        return texti; 
+        }
+  
+
+
+function cleanInput2(sting2) {
+	let temp=sting2.toString();
+	let stingArray2=temp.split("");
+    let texti2="";
+    if(stingArray2[0]==0){
+    stingArray2.shift();
+    }
+    for (let l=0; l<stingArray2.length; l++){
+    	texti2 += stingArray2[l];
+        }
+    
+        return texti2; 
+        }
+
+    
+
+for (let m=0; m<myArray.length; m++){
+	let limii=cleanInput2(cleanInput1(myArray[m]));
+    myArray[m]=limii;
+   }
+
+
+
+let next = "";
+
+for (let i = 0; i < myArray.length; i++) {
+  next += myArray[i] + "<br>";
+}
+document.getElementById("demo").innerHTML = next;
+</script>
+
+</body>
+</html>
